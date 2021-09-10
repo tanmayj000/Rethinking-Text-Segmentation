@@ -54,6 +54,7 @@ if __name__ == '__main__':
     parser.add_argument('--port'  , type=int, default=11233)
     parser.add_argument('--dsname', type=str, default='textseg')
     parser.add_argument('--trainwithcls', action='store_true', default=False)
+    parser.add_argument('--log', action=str, default="/content/drive/MyDrive/log")
     args = parser.parse_args()
 
     istrain = not args.eval
@@ -184,10 +185,10 @@ if __name__ == '__main__':
             cfg.TRAIN.SIGNATURE = ['texrnet', 'hrnet']
         else:
             cfg.TRAIN.SIGNATURE = ['texrnet', 'deeplab']
-        cfg.LOG_DIR = experiment_folder(cfg, isnew=True, sig=cfg.TRAIN.SIGNATURE)
+        cfg.LOG_DIR = args.log
         cfg.LOG_FILE = osp.join(cfg.LOG_DIR, 'train.log')
     else:
-        cfg.LOG_DIR = osp.join(cfg.MISC_DIR, 'eval')
+        cfg.LOG_DIR = args.log
         cfg.LOG_FILE = osp.join(cfg.LOG_DIR, 'eval.log')
         cfg.TEST.SUB_DIR = None
 
