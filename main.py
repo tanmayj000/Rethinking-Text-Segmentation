@@ -54,7 +54,7 @@ if __name__ == '__main__':
     parser.add_argument('--port'  , type=int, default=11233)
     parser.add_argument('--dsname', type=str, default='textseg')
     parser.add_argument('--trainwithcls', action='store_true', default=False)
-    parser.add_argument('--log', action=str, default="/content/drive/MyDrive/log")
+    parser.add_argument('--log', type=str, default="/content/drive/MyDrive/log")
     args = parser.parse_args()
 
     istrain = not args.eval
