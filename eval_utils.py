@@ -162,7 +162,7 @@ def set_cfg(cfg, dsname):
     cfg.TEST.DISPLAY = 10
     cfg.TEST.VISUAL = False
     cfg.TEST.SUB_DIR = '>>>>later<<<<'
-    cfg.TEST.OUTPUT_RESULT = False
+    cfg.TEST.OUTPUT_RESULT = True
 
     cfg.TEST.INFERENCE_FLIP = False
     cfg.TEST.INFERENCE_MS = [
